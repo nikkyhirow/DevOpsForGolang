@@ -15,5 +15,5 @@ script:
     - $HOME/gopath/bin/goveralls -repotoken $COVERALLS_TOKEN ./...
 after_success:
     - docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
-    - docker build -t kihakuhirow/devopsforgolang .
-    - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && docker push kihakuhirow/devopsforgolang
+    - docker build -t nikkyhirow/devopsforgolang .
+    - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && docker push nikkyhirow/devopsforgolang
